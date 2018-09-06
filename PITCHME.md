@@ -1,5 +1,5 @@
 ---
-# Intro to Programming
+# Robotics
 
 UCMHS Robotics / Fall 2018 / Ms. Gerstein
 ---
