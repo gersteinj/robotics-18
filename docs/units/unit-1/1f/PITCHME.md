@@ -65,3 +65,40 @@ void loop()
 ## Try It
 
 Use what you see here to blink two LEDs in opposition to each other
+---
+# Analog(ish)
+---
+## PWM and Analog Write
+
+* Turns pin on/off *very* fast
+* Actual voltage is still 5v - current limiting still needed
+* Only available on marked pins
+---
+## Analog Write
+```arduino
+const int ledPin = 3;
+
+void setup()
+{
+  pinMode(ledPin, OUTPUT);
+}
+
+void loop()
+{
+  // Set the LED to full brightness
+  analogWrite(ledPin, 255);
+  delay(1000);
+  // Turn the LED off
+  analogWrite(ledPin, 0);
+  delay(500);
+  //Set the LED to ~1/3 brightness
+  analogWrite(ledPin, 85);
+  delay(500);
+}
+```
+@[1](Made the variable a constant so it won't change)
+@[11,14,17](analogWrite())
+---
+## Try It
+
+Use an Arduino to control the anodes of an RGB LED and program a pattern of colors in (for example, a rainbow)
