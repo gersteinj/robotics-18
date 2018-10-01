@@ -60,6 +60,56 @@ void loop(){
 }
 ```
 ---
+# Conditionals
+
+Conditional statements make decisions on what to do
+---
+# if
+
+*if* something is true *then* perform an action
+
+```arduino
+int buttonPin = 2;
+int buttonState;
+
+void setup(){
+    Serial.begin(9600);
+}
+
+void loop(){
+    buttonState = digitalRead(buttonPin);
+    
+    if (buttonState == 1){
+        Serial.println("You pushed the button!");
+    }
+}
+```
+---
+*if* something is true *then* perform an action
+
+*otherwise* do something else
+
+```arduino
+int buttonPin = 2;
+int buttonState;
+
+void setup(){
+    Serial.begin(9600);
+}
+
+void loop(){
+    buttonState = digitalRead(buttonPin);
+    
+    if (buttonState == 1){
+        Serial.println("You pushed the button!");
+    }
+    else {
+        Serial.println("You're not pushing the button :(")
+        Serial.println("Push the button and stop making Arduino sad.");
+    }
+}
+```
+---
 ## Try It
 
 Use this to turn an LED on when you press a button and off when you don't
