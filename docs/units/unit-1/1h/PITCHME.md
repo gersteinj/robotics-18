@@ -40,12 +40,13 @@ void loop()
 }
 ```
 @[3](Start using Serial)
-@[7](Print "Hello" to serial monitor and create a new line)
+@[8](Print "Hello" to serial monitor and create a new line)
 ---
 # Digital Input
 ---
 ## digitalRead()
 
+```arduino
 int buttonPin = 2;
 int buttonState;
 
@@ -57,6 +58,7 @@ void loop(){
     buttonState = digitalRead(buttonPin);
     Serial.println(buttonState);
 }
+```
 ---
 ## Try It
 
