@@ -28,31 +28,42 @@ UCMHS Robotics / Fall 2018 / Ms. Gerstein
 
 ```arduino
 int buttonPin = 2;
-int buttonState = 0;;
-int oldButton = 0;
+int buttonState = 0;
 int ledPin = 3;
 int ledState = 0;
+// How can we keep track of the current state of the LED?
 
 void setup(){
-    Serial.begin(9600);
-    pinMode(buttonPin, INPUT);
-    pinMode(ledPin, OUTPUT);
+  Serial.begin(9600);
+  pinMode(2, INPUT);
+  pinMode(3, OUTPUT);
 }
 
 void loop(){
-    buttonState = digitalRead(buttonPin);
-    if (buttonState != oldButton) {
-        if (ledState == 0) {
-            ledState = 1;
-        }
-        else {
-            ledState = 0;
-        }
+  // How can we tell if the current state of
+  // the button is different from previous?
+  if (digitalRead(buttonPin) == 1 && digitalRead(buttonPin) != buttonState) {
+    // will run if button state has changed
+    Serial.println("It's changed");
+    if (ledState == 0) {
+      ledState = 1;
     }
-    Serial.println(buttonState);
-    oldButton = buttonState;
-    digitalWrite(ledPin, ledState);
-    delay(50);
+    else {
+      ledState = 0;
+    }
+    
+  }
+  buttonState = digitalRead(buttonPin);
+  // if ledState is high, turn LED on
+  if (ledState == 1){
+    digitalWrite(ledPin, HIGH);
+  }
+  // otherwise turn it off
+  else {
+    digitalWrite(ledPin, LOW);
+  }
+  Serial.println(buttonState);
+  delay(50);
 }
 ```
 ---
