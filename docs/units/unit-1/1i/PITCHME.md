@@ -67,6 +67,45 @@ void loop(){
 }
 ```
 ---
+Updated version of changing states
+
+```arduino
+int buttonState;
+int oldButtonState;
+int ledState = 0;
+
+const int buttonPin = 2;
+const int ledPin = 3;
+
+void setup(){
+    pinMode(buttonPin, INPUT);
+    pinMode(ledPin, OUTPUT);
+    Serial.begin(9600);
+    Serial.print("Ready!");
+    buttonState = digitalRead(buttonPin);
+    oldButtonState = digitalRead(buttonPin);
+}
+
+void loop(){
+    buttonState = digitalRead(buttonPin);
+    if (buttonState != oldButtonState && buttonState == 1) {
+        Serial.println("You pushed the button");
+        // ledState = !ledState; // toggle between two states
+        if (ledState == 0) {
+            ledState = 1;
+        }
+        else {
+            ledState = 0;
+        }
+    }
+
+    digitalWrite(ledPin, ledState);
+
+    oldButtonState = buttonState;
+    delay(50);
+}
+```
+---
 ## Try It
 
 Combine this with `analogWrite()` to cycle through a sequence of colors each time you press the button.
