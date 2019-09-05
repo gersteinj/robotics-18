@@ -1,7 +1,7 @@
 ---
 # Robotics
 
-UCMHS Robotics / Fall 2018 / Ms. Gerstein
+UCMHS Robotics / Fall 2019 / Ms. Gerstein
 ---
 ## Course Goals
 
