@@ -74,4 +74,3 @@ Don't make me make more rules.
 
 * Make sure your parents have submitted AUP
 * Fill out my student survey, which will be linked in Google Classroom
-* Your signature and a parent/guardian signature for [course syllabus](https://gersteinj.github.io/robotics-18/)
